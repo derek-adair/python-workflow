@@ -1,0 +1,11 @@
+db:
+  image: postgres:9.3
+web:
+  build: .
+  command: /env/bin/python manage.py runserver 0.0.0.0:8000
+  links:
+    - db
+  ports:
+    - "8000:8000"
+  volumes:
+    - .:/code
