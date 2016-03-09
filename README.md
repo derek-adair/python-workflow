@@ -1,3 +1,7 @@
+WARNING: PRETTY UNSTABLE
+========================
+I'm honeslty not sure of the state of this right now but it is a decent start at an image to run locally and be able to run your test suites w/o having to hit your CI server.  This requires running selenium xvfb and installing some font packages.  Stay tuned for updates.
+
 Python Workflow
 ==========
 
