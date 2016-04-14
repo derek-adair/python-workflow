@@ -1,0 +1,48 @@
+###
+# Default configuration for pinball environment
+###
+
+# Generation should be incremented with each change affecting any of the
+# pinball servers (master, workers, etc.)
+generation:                                 1
+
+# Debug should be disabled for long running Django apps to prevent caching
+# of queries leading to ever growing memory consumption.
+debug:                                      True
+
+# Master and client configuration.
+master_host:                               master
+master_port:                                9090
+# master_name is the suffix of all the pinball db tables.
+master_name:                              master
+client_connect_attempts:                    10
+client_timeout_sec:                         180
+max_backoff_client_reconnet_sec:            1200
+
+# Worker configuration.
+workers:                                    5
+worker_poll_time_sec:                       10
+worker_creation_sleep_interval_sec:         600
+databases:
+     default:
+         ENGINE:       django.db.backends.mysql
+         NAME:         pinball
+         USER:         root
+         PASSWORD:     password
+         HOST:         mysql
+         PORT:         "3306"
+     pinball.persistence:
+         ENGINE:       django.db.backends.mysql
+         NAME:         pinball
+         USER:         root
+         PASSWORD:     password
+         HOST:         mysql
+         PORT:         "3306"
+parser:                   pinball_ext.workflows.parser.PyWorkflowParser
+parser_params:
+      workflows_config:       pinball_ext.examples.workflows.WORKFLOWS
+      job_repo_dir:           "~"
+      job_import_dirs_config: pinball_ext.examples.jobs.JOB_IMPORT_DIRS
+ui_host:  ui
+ui_port: 8080
+default_email: d@derekadair.com

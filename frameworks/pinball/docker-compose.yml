@@ -1,0 +1,42 @@
+version: "2"
+services:
+  ui:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - mysql:mysql
+      - master:master
+    command: python -m pinball.run_pinball -c /code/pinball_config.yml -m ui
+    volumes_from:
+      - master
+  master:
+    build: .
+    ports:
+      - "9090:9090"
+    command: python -m pinball.run_pinball -c /code/pinball_config.yml -m master
+    volumes:
+      - ./:/code
+  workers:
+    build: .
+    command: python -m pinball.run_pinball -c /code/pinball_config.yml -m workers
+    links:
+      - master:master
+    volumes_from:
+      - master
+  scheduler:
+    build: .
+    command: python -m pinball.run_pinball -c /code/pinball_config.yml -m scheduler
+    links:
+      - master:master
+    volumes_from:
+      - master
+  mysql:
+    image: tutum/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASS=password
+      - ON_CREATE_DB=pinball
