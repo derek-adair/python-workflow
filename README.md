@@ -11,8 +11,8 @@ It Comes With...
 ================
 
 *Base Image*
-* python3.4
-* python3.4-dev
+* python3.5
+* python3.5-dev
 * python-pip
 * git
 * wget
@@ -24,6 +24,9 @@ It Comes With...
 * xvfb (runs gui apps w/o a frame buffer, needed for funcitonal tests in firefox)
 * firefox
 * xfonts-100dpi/75dpi/scalable
+
+*Python-2.7 version*
+Some apps are STILL (/sigh) using 2.7 python.  As I am not planning on supporting specific sub versions of 2.7, this one should do just fine.
 
 Pre-Reqs
 ========
@@ -40,6 +43,6 @@ Quick Start (Django)
 
 Future Improvements
 ===================
-* (possible) removal of virtualenv
-* More versions of Python
-* Likely adoption of a configuration manager ([Ansible](http://www.ansible.com/) or [Chef](https://www.chef.io/) are leading candidates, maybe both)
+* ~~(possible) removal of virtualenv~~: no longer using it, but its still installed.
+* ~~More versions of Python~~ focusing on 
+* ([Ansible](http://www.ansible.com/) playbook.  This would be used to bootstrap docker hosts and even have playbooks for managing applications that use this image
