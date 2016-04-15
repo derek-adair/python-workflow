@@ -1,6 +1,6 @@
-WARNING: PRETTY UNSTABLE
+Making efforts to stabilize
 ========================
-I'm honeslty not sure of the state of this right now but it is a decent start at an image to run locally and be able to run your test suites w/o having to hit your CI server.  This requires running selenium xvfb and installing some font packages.  Stay tuned for updates.
+I've taken inventory over the last day or so and things are starting to stabilize a bit more.  I've lovingly stolen the base images here from the official python repository because I am making an effort to make this image as small as possible.  It should be known that I am still learning how to do this, so... just be this repository is still unstable.
 
 Python Workflow
 ==========
