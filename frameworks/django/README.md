@@ -1,3 +1,4 @@
+# Lovingly Stolen from https://github.com/realpython/dockerizing-django
 ## Django Development With Docker Compose and Machine
 
 Featuring:
