@@ -1,18 +1,12 @@
 web:
   restart: always
   build: ./web
-  containers: 5
   expose:
     - "8000"
   links:
     - postgres:postgres
     - redis:redis
-  volumes:
-    - /usr/src/app
-    - /usr/src/app/static
   env_file: .env
-  environment:
-    DEBUG: 'true'
   command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000
 
 nginx:
@@ -29,9 +23,9 @@ nginx:
 
 postgres:
   restart: always
-  image: postgres:9.3
+  image: postgres:latest
   ports:
-    - "5432:5432"
+    - "5432"
   volumes:
     - pgdata:/var/lib/postgresql/data/
 
@@ -39,6 +33,6 @@ redis:
   restart: always
   image: redis:latest
   ports:
-    - "6379:6379"
+    - "6379"
   volumes:
     - redisdata:/data
