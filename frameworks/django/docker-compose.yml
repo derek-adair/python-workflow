@@ -1,15 +1,14 @@
 web:
   restart: always
   build: ./web
-  containers: 5
   expose:
     - "8000"
   links:
     - postgres:postgres
     - redis:redis
   volumes:
-    - /usr/src/app
-    - /usr/src/app/static
+    - /code
+    - /code/static
   env_file: .env
   environment:
     DEBUG: 'true'
