@@ -1,0 +1,22 @@
+web:
+  restart: always
+  build: ./web
+  expose:
+    - "8080"
+  volumes:
+    - /code
+  environment:
+    DEBUG: 'true'
+  command: /usr/local/bin/gunicorn app:my_web_app -w 2 -b 0.0.0.0:8080 --worker-class aiohttp.worker.GunicornWebWorker
+
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "8001:80"
+  volumes:
+    - /www/static
+  volumes_from:
+    - web
+  links:
+    - web:web
