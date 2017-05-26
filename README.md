@@ -1,6 +1,6 @@
-Making efforts to stabilize
+Currently Stable(ish)
 ========================
-I've taken inventory over the last day or so and things are starting to stabilize a bit more.  I've lovingly stolen the base images here from the official python repository because I am making an effort to make this image as small as possible.  It should be known that I am still learning how to do this, so... just be this repository is still unstable.
+I've had no updates in quite a while, and things work alright for me.  The packages are likely horribly out of date though and need some attention.
 
 Python Workflow
 ==========
