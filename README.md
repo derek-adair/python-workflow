@@ -1,4 +1,5 @@
-Currently Stable(ish)
+
+urrently Stable(ish)
 ========================
 I've had no updates in quite a while, and things work alright for me.  The packages are likely horribly out of date though and need some attention.
 
@@ -28,21 +29,10 @@ It Comes With...
 *Python-2.7 version*
 Some apps are STILL (/sigh) using 2.7 python.  As I am not planning on supporting specific sub versions of 2.7, this one should do just fine.
 
-Pre-Reqs
+Example Pre-Reqs
 ========
 * Docker Toolbelt
 ** [Docker](https://docs.docker.com/installation/)
 ** [Docker Machine](https://docs.docker.com/machine/install-machine/)
 ** [Docker Compose](https://docs.docker.com/compose/install/)
 * (if not on linux) [Virtualbox](https://www.virtualbox.org/wiki/Downloads) or [VMware Fusion](http://www.vmware.com/products/fusion)
-
-Quick Start (Django)
-====================
-    git clone git@github.com:derek-adair/python-workflow.git
-    cd frameworks/django && docker-compose up
-
-Future Improvements
-===================
-* ~~(possible) removal of virtualenv~~: no longer using it, but its still installed.
-* ~~More versions of Python~~ focusing on 
-* ([Ansible](http://www.ansible.com/) playbook.  This would be used to bootstrap docker hosts and even have playbooks for managing applications that use this image
