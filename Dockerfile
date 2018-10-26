@@ -52,6 +52,7 @@ RUN cd /usr/local/bin \
 RUN pip install --no-cache-dir virtualenv && \
     mkdir /virtualenv &&  \
     virtualenv /virtualenv 
+
 ENV PATH=/virtualenv/bin:$PATH
 
 CMD ["python"]
