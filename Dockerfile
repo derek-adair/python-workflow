@@ -48,4 +48,10 @@ RUN cd /usr/local/bin \
     && ln -s python3 python \
     && ln -s python3-config python-config
 
-CMD ["python3"]
+# install virtualenv
+RUN pip install --no-cache-dir virtualenv && \
+    mkdir /virtualenv &&  \
+    virtualenv /virtualenv 
+ENV PATH=/virtualenv/bin:$PATH
+
+CMD ["python"]
