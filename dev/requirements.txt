@@ -2,4 +2,4 @@ twine
 selenium==2.45.0
 setuptools
 sniffer
-pyinotify
+inotify
