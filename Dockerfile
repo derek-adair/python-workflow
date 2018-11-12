@@ -15,7 +15,7 @@ ENV GPG_KEY 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
 ENV PYTHON_VERSION 3.5.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.1.1
+ENV PYTHON_PIP_VERSION 18.1
 
 RUN set -ex \
     && curl -fSL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
@@ -49,7 +49,7 @@ RUN cd /usr/local/bin \
     && ln -s python3-config python-config
 
 # install virtualenv
-RUN pip install --no-cache-dir virtualenv && \
+RUN pip install --upgrade virtualenv pip && \
     mkdir /virtualenv &&  \
     virtualenv /virtualenv 
 ENV PATH=/virtualenv/bin:$PATH
