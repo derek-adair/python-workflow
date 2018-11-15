@@ -1,3 +1,4 @@
+FROM selenium/node-firefox as firefox
 FROM derekadair/python-workflow:onbuild
 MAINTAINER Derek Adair "d@derekadair.com"
 # Add packages for firefox to list
@@ -7,7 +8,6 @@ RUN apt-get update -y && \
 	apt-get install --force-yes -y \
         # Install fonts + firefox for headless testing in selenium
         xvfb \
-        firefox \
         xfonts-100dpi \
         xfonts-75dpi \
         xfonts-scalable \
@@ -15,3 +15,5 @@ RUN apt-get update -y && \
 
 # cleanup
 RUN apt-get clean
+COPY --from=firefox /usr/bin/firefox /usr/bin/firefox
+COPY --from=firefox /usr/bin/geckodriver /usr/bin/geckodriver
