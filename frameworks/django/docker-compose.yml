@@ -7,7 +7,7 @@ web:
     - postgres:postgres
     - redis:redis
   volumes:
-    - /code
+      - ./web:/code
   env_file: .env
   environment:
     DEBUG: 'true'
