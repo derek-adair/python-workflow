@@ -1,3 +1,5 @@
-FROM derekadair/python-workflow:dev as dev_base
-FROM derekadair/python-workflow:onbuild
-COPY --from=dev_base /virtualenv/ /virtualenv/
+FROM derekadair/python-workflow:onbuild as builder
+FROM derekadair/python-workflow:dev
+WORKDIR /code
+COPY --from=builder /code/ /code/
+COPY --from=builder /virtualenv/ /virtualenv/

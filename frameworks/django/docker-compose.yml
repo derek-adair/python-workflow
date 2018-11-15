@@ -8,11 +8,10 @@ web:
     - redis:redis
   volumes:
     - /code
-    - /code/static
   env_file: .env
   environment:
     DEBUG: 'true'
-  command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000
+  command: gunicorn docker_django.wsgi:application -w 2 -b :8000
 
 nginx:
   restart: always
