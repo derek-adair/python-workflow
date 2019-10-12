@@ -1,5 +1,5 @@
 FROM python:3.5-alpine
-WORKDIR /app
+WORKDIR /code
 RUN apk update && apk upgrade 
 RUN apk add curl "postgresql-dev" \
                  "musl-dev" \
