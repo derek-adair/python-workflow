@@ -1,2 +1,2 @@
-gunicorn==19.4.5
+gunicorn==19.5.0
 aiohttp==0.21.5
