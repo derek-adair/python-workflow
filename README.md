@@ -6,7 +6,7 @@ Base Python image forked from [stackbrew/ubuntu:trusty](https://hub.docker.com/r
 It Comes With...
 ================
 
-*Base Image*
+*:base*
 * python3.5
 * python3.5-dev
 * python-pip
@@ -15,11 +15,35 @@ It Comes With...
 * pip
 * virtualenv
 
-*Dev*
+*:dev*
 * libpq-dev (required for pyscopg2)
 * xvfb (runs gui apps w/o a frame buffer, needed for funcitonal tests in firefox)
 * firefox
 * xfonts-100dpi/75dpi/scalable
 
-# Python-2.7
+*:ffmpeg*
+* ff
+*:ffmeg*
+* ffmeg + reqs
+** opencore-amr
+** x264
+** x265
+** libogg
+** libopus
+** libvorbis 
+** libtheora 
+** libvpx 
+** libmp3lame 
+** xvid
+** fdk-aac 
+** openjpeg 
+** freetype 
+** libvstab
+** fridibi
+** fontconfig
+** libass
+** kvazaar
+
+
+ # Python-2.7
 No longer supporting python 2.  Come on dude...
