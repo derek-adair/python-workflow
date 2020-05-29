@@ -1,5 +1,5 @@
 # derekadair/python-workflow:base
-FROM python:3.7-jessie
+FROM python:3.7-buster
 MAINTAINER Derek Adair "d@derekadair.com"
 
 RUN apt-get update && apt-get -y upgrade
