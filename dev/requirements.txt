@@ -3,3 +3,4 @@ selenium
 setuptools
 sniffer
 inotify
+factory_boy
